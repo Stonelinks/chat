@@ -1,23 +1,40 @@
 {
   "name": "chat",
-  "version": "1.0.0",
+  "version": "0.0.0",
   "description": "probably the worst chat program ever",
-  "main": "index.js",
+  "main": "src/index.js",
   "scripts": {
-    "start": "node index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "lint": "standard --fix",
+    "test": "npm run lint",
+    "start": "webpack-dev-server --config webpack.config.js",
+    "prod": "webpack --config webpack.prod.config.js && node server.js"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Stonelinks/chat.git"
-  },
-  "author": "Lucas Doyle",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/Stonelinks/chat/issues"
-  },
-  "homepage": "https://github.com/Stonelinks/chat#readme",
+  "homepage": "https://github.com/stonelinks/chat",
+  "url": "git+https://github.com/stonelinks/chat",
+  "keywords": [
+  ],
+  "author": "agrcrobles@gmail.com",
+  "license": "ISC",
   "dependencies": {
-    "broadcast-stream": "0.1.1"
+    "babel-cli": "6.14.0",
+    "bufferutil": "1.2.1",
+    "express": "4.14.0",
+    "react-dom": "15.3.2",
+    "ws": "1.1.0",
+    "react": "15.4.1",
+    "react-native-web": "0.0.63"
+  },
+  "devDependencies": {
+    "babel-core": "6.18.2",
+    "babel-loader": "6.2.8",
+    "babel-preset-es2015": "6.18.0",
+    "babel-preset-react": "6.16.0",
+    "babel-preset-stage-1": "6.16.0",
+    "react-hot-loader": "3.0.0-beta.6",
+    "react-redux": "5.0.1",
+    "redux": "3.6.0",
+    "webpack": "1.13.3",
+    "webpack-dev-server": "1.16.2",
+    "standard": "8.6.0"
   }
 }
