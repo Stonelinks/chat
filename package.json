@@ -1,0 +1,15 @@
+{
+  "name": "chat",
+  "version": "1.0.0",
+  "main": "",
+  "repository": "git@github.com:Stonelinks/chat.git",
+  "author": "Lucas Doyle <lucas.p.doyle@gmail.com>",
+  "license": "MIT",
+  "engines": {
+    "node": "12.11.1"
+  },
+  "devDependencies": {
+    "expo-cli": "^3.11.3",
+    "prettier": "^1.19.1"
+  }
+}

@@ -1,0 +1,18 @@
+#!/bin/bash
+set -ex
+
+echo "Checking if we have node $NODE_VERSION."
+if [ ! -f opt/node$NODE_VERSION/bin/node ]; then
+  NODE_DOWNLOAD_URL=https://nodejs.org/dist/v$NODE_VERSION/node-v$NODE_VERSION-$OS-x64.tar.gz
+  NODE_TMP_PATH=/tmp/node$NODE_VERSION.tar.gz
+  curl -fsSL "$NODE_DOWNLOAD_URL" -o $NODE_TMP_PATH
+  mkdir -p opt/node$NODE_VERSION
+  tar -C opt/node$NODE_VERSION -xzf $NODE_TMP_PATH --strip-components 1
+  rm $NODE_TMP_PATH
+
+  echo "Resetting node_modules."
+  rm -rf node_modules/
+fi
+echo
+
+yarn

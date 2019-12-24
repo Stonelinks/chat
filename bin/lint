@@ -1,0 +1,11 @@
+#!/bin/bash
+set -ex
+
+find . \
+  -type f \
+  -name "*.ts" -o \
+  -name "*.json" -o \
+  -name "*.js" \
+  | grep -v "node_modules" \
+  | grep -v "opt" \
+  | xargs prettier --write 
