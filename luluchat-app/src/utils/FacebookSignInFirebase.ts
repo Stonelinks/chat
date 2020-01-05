@@ -14,13 +14,16 @@ const onSignInFacebook = token => {
               API.database()
                 .ref(`users/${response.user.uid}`)
                 .set({
-                  firstName: response.additionalUserInfo.profile.first_name,
-                  lastName: response.additionalUserInfo.profile.last_name,
+                  firstName: (response.additionalUserInfo.profile as any)
+                    .first_name,
+                  lastName: (response.additionalUserInfo.profile as any)
+                    .last_name,
                   email: response.user.email,
                   phoneNumber: response.user.phoneNumber,
-                  profilePicture:
-                    response.additionalUserInfo.profile.picture.data.url,
-                  createdAt: Date.now()
+                  profilePicture: (response.additionalUserInfo.profile as any)
+                    .picture.data.url,
+                  createdAt: Date.now(),
+                  lastLogIn: Date.now()
                 });
             } else {
               API.database()

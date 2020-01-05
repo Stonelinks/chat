@@ -1,26 +1,7 @@
-// import React from 'react';
-// import { StyleSheet, Text, View } from 'react-native';
-
-// export default function App() {
-//   return (
-//     <View style={styles.container}>
-//       <Text>hi</Text>
-//     </View>
-//   );
-// }
-
-// const styles = StyleSheet.create({
-//   container: {
-//     flex: 1,
-//     backgroundColor: '#fff',
-//     alignItems: 'center',
-//     justifyContent: 'center',
-//   },
-// });
-
 import { createAppContainer, createSwitchNavigator } from "react-navigation";
-
-import { DashboardScreen, LoadingScreen, LoginScreen } from "./src/screens";
+import { DashboardScreen } from "./src/screens/DashboardScreen";
+import { LoadingScreen } from "./src/screens/LoadingScreen";
+import { LoginScreen } from "./src/screens/LoginScreen";
 import { firebaseConfig } from "./src/utils/config";
 import API from "./src/utils/Firebase";
 

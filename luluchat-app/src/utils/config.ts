@@ -4,3 +4,5 @@ export const firebaseConfig = {
   databaseURL: process.env.FIREBASE_CONFIG_DATABASE_URL,
   storageBucket: process.env.FIREBASE_CONFIG_STORAGE_BUCKET
 };
+
+export const appName = "luluchat";

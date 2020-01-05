@@ -1,11 +1,10 @@
 import React from "react";
-import { View, Button } from "react-native";
-import SignOut from "../utils/SignOut";
+import { Button, View } from "react-native";
 import styles from "../Styles";
+import SignOut from "../utils/SignOut";
 
-const DashboardScreen = () => (
+export const DashboardScreen = () => (
   <View style={styles.container}>
     <Button onPress={SignOut} title="Sign Out" />
   </View>
 );
-export default DashboardScreen;

@@ -22,11 +22,15 @@ const onSignInGoogle = googleUser => {
               .ref(`users/${response.user.uid}`)
               .set({
                 email: response.user.email,
-                firstName: response.additionalUserInfo.profile.given_name,
-                lastName: response.additionalUserInfo.profile.family_name,
-                locale: response.additionalUserInfo.profile.locale,
-                profilePicture: response.additionalUserInfo.profile.picture,
-                createdAt: Date.now()
+                firstName: (response.additionalUserInfo.profile as any)
+                  .given_name,
+                lastName: (response.additionalUserInfo.profile as any)
+                  .family_name,
+                locale: (response.additionalUserInfo.profile as any).locale,
+                profilePicture: (response.additionalUserInfo.profile as any)
+                  .picture,
+                createdAt: Date.now(),
+                lastLogIn: Date.now()
               });
           } else {
             API.database()

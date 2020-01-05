@@ -1,10 +1,10 @@
 /* eslint-disable react/prop-types */
 import React from "react";
-import { View, ActivityIndicator } from "react-native";
-import API from "../utils/Firebase";
+import { ActivityIndicator, View } from "react-native";
 import styles from "../Styles";
+import API from "../utils/Firebase";
 
-const LoadingScreen = ({ navigation }) => {
+export const LoadingScreen = ({ navigation }) => {
   const isUserLoggedIn = React.useCallback(() => {
     API.auth().onAuthStateChanged(user =>
       user
@@ -23,4 +23,3 @@ const LoadingScreen = ({ navigation }) => {
     </View>
   );
 };
-export default LoadingScreen;
