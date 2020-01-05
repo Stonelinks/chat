@@ -1,10 +1,9 @@
 import * as Facebook from "expo-facebook";
 import onSignInFacebook from "./FacebookSignInFirebase";
-import { facebookAppId } from "./secrets";
 
 const signInWithFacebookAsync = async () => {
   try {
-    await Facebook.initializeAsync(facebookAppId);
+    await Facebook.initializeAsync(process.env.FACEBOOK_APP_ID);
     const { type, token } = await Facebook.logInWithReadPermissionsAsync({
       permissions: ["public_profile", "email"]
     });
