@@ -4,8 +4,12 @@ set -ex
 find . \
   -type f \
   -name "*.ts" -o \
-  -name "*.json" -o \
-  -name "*.js" \
+  -name "*.tsx" -o \
+  -name "*.js" -o \
+  -name "*.jsx" -o \
+  -name "*.json" \
   | grep -v "node_modules" \
   | grep -v "opt" \
   | xargs prettier --write 
+
+tslint -c tslint.json '**/*.{ts,tsx}' -e '{opt,node_modules,*/node_modules}' --fix
