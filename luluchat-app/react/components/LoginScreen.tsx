@@ -1,8 +1,10 @@
 import React from "react";
 import { Button, View } from "react-native";
 import styles from "../Styles";
-import signInWithFacebookAsync from "../utils/SignInWithFacebook";
-import signInWithGoogleAsync from "../utils/SignInWithGoogle";
+import {
+  signInWithFacebookAsync,
+  signInWithGoogleAsync
+} from "../utils/auth/SignIn";
 
 export const LoginScreen = () => (
   <View style={styles.container}>
